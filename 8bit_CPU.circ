@@ -95,16 +95,23 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(510,190)" to="(580,190)"/>
     <wire from="(590,570)" to="(600,570)"/>
     <wire from="(620,430)" to="(630,430)"/>
-    <comp lib="0" loc="(250,260)" name="Pin">
+    <comp lib="0" loc="(170,160)" name="Pin">
+      <a name="width" val="8"/>
       <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(490,210)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
     </comp>
     <comp loc="(1090,270)" name="4x16 DECODER">
       <a name="facing" val="south"/>
     </comp>
-    <comp lib="0" loc="(780,190)" name="Splitter">
-      <a name="facing" val="north"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
+    <comp loc="(460,210)" name="CPU_REGSITER"/>
+    <comp lib="0" loc="(960,430)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="labelloc" val="east"/>
     </comp>
     <comp lib="0" loc="(1100,320)" name="Pin">
       <a name="facing" val="west"/>
@@ -112,16 +119,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="16"/>
       <a name="labelloc" val="east"/>
     </comp>
+    <comp lib="0" loc="(780,190)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
     <comp loc="(850,430)" name="4x16 DECODER"/>
-    <comp lib="0" loc="(490,210)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
-    <comp loc="(460,210)" name="CPU_REGSITER"/>
-    <comp lib="0" loc="(170,160)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="tristate" val="false"/>
-    </comp>
     <comp lib="0" loc="(620,550)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="4"/>
@@ -130,11 +133,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(250,300)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="0" loc="(960,430)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="16"/>
-      <a name="labelloc" val="east"/>
+    <comp lib="0" loc="(250,260)" name="Pin">
+      <a name="tristate" val="false"/>
     </comp>
   </circuit>
   <circuit name="CPU_MEM_1">
@@ -176,36 +176,36 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(420,390)" to="(520,390)"/>
     <wire from="(250,290)" to="(250,410)"/>
     <wire from="(480,350)" to="(520,350)"/>
-    <comp lib="1" loc="(340,190)" name="NAND Gate">
+    <comp lib="6" loc="(418,465)" name="Text">
+      <a name="text" val="1 bit memory cell"/>
+    </comp>
+    <comp lib="1" loc="(580,370)" name="NAND Gate">
       <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(438,76)" name="Text">
+      <a name="text" val="Active High with Enable"/>
     </comp>
     <comp lib="0" loc="(800,210)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
+    <comp lib="6" loc="(156,293)" name="Text">
+      <a name="text" val="s"/>
+    </comp>
     <comp lib="1" loc="(570,210)" name="NAND Gate">
       <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="6" loc="(438,76)" name="Text">
-      <a name="text" val="Active High with Enable"/>
-    </comp>
-    <comp lib="6" loc="(418,465)" name="Text">
-      <a name="text" val="1 bit memory cell"/>
-    </comp>
-    <comp lib="6" loc="(432,30)" name="Text">
-      <a name="text" val="Storing 1 bit in a memory cell"/>
-    </comp>
-    <comp lib="0" loc="(190,290)" name="Pin">
-      <a name="tristate" val="false"/>
     </comp>
     <comp lib="6" loc="(832,213)" name="Text">
       <a name="text" val="o"/>
     </comp>
+    <comp lib="6" loc="(432,30)" name="Text">
+      <a name="text" val="Storing 1 bit in a memory cell"/>
+    </comp>
     <comp lib="0" loc="(110,170)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="1" loc="(580,370)" name="NAND Gate">
+    <comp lib="1" loc="(340,190)" name="NAND Gate">
       <a name="inputs" val="2"/>
     </comp>
     <comp lib="6" loc="(78,171)" name="Text">
@@ -214,8 +214,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="1" loc="(420,390)" name="NAND Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="6" loc="(156,293)" name="Text">
-      <a name="text" val="s"/>
+    <comp lib="0" loc="(190,290)" name="Pin">
+      <a name="tristate" val="false"/>
     </comp>
   </circuit>
   <circuit name="CPU_BYTE">
@@ -298,36 +298,36 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(870,180)" to="(880,180)"/>
     <wire from="(330,170)" to="(330,680)"/>
     <wire from="(220,150)" to="(350,150)"/>
-    <comp lib="0" loc="(970,160)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(900,160)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
-    <comp loc="(660,170)" name="CPU_MEM_1"/>
-    <comp loc="(660,1430)" name="CPU_MEM_1"/>
     <comp loc="(660,520)" name="CPU_MEM_1"/>
-    <comp loc="(660,340)" name="CPU_MEM_1"/>
-    <comp lib="0" loc="(250,1550)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
+    <comp loc="(660,170)" name="CPU_MEM_1"/>
     <comp lib="0" loc="(190,220)" name="Pin">
       <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp loc="(660,1060)" name="CPU_MEM_1"/>
+    <comp lib="0" loc="(250,1550)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
     <comp lib="0" loc="(200,220)" name="Splitter">
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
     </comp>
-    <comp loc="(660,890)" name="CPU_MEM_1"/>
-    <comp loc="(660,1060)" name="CPU_MEM_1"/>
+    <comp lib="0" loc="(970,160)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp loc="(660,340)" name="CPU_MEM_1"/>
     <comp loc="(660,710)" name="CPU_MEM_1"/>
     <comp loc="(660,1240)" name="CPU_MEM_1"/>
+    <comp lib="0" loc="(900,160)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp loc="(660,890)" name="CPU_MEM_1"/>
+    <comp loc="(660,1430)" name="CPU_MEM_1"/>
   </circuit>
   <circuit name="CPU_ENABLER">
     <a name="circuit" val="CPU_ENABLER"/>
@@ -408,14 +408,24 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(140,150)" to="(270,150)"/>
     <wire from="(380,160)" to="(380,280)"/>
     <wire from="(380,160)" to="(450,160)"/>
-    <comp lib="1" loc="(360,210)" name="AND Gate">
+    <comp lib="0" loc="(500,130)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(360,140)" name="AND Gate">
       <a name="inputs" val="2"/>
     </comp>
     <comp lib="1" loc="(360,630)" name="AND Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="0" loc="(110,650)" name="Pin">
-      <a name="tristate" val="false"/>
+    <comp lib="1" loc="(360,420)" name="AND Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(120,200)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
     </comp>
     <comp lib="1" loc="(360,490)" name="AND Gate">
       <a name="inputs" val="2"/>
@@ -423,11 +433,17 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="1" loc="(360,560)" name="AND Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="0" loc="(120,200)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
+    <comp lib="1" loc="(360,210)" name="AND Gate">
+      <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(360,420)" name="AND Gate">
+    <comp lib="0" loc="(110,650)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(90,200)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="1" loc="(360,350)" name="AND Gate">
       <a name="inputs" val="2"/>
     </comp>
     <comp lib="0" loc="(470,130)" name="Splitter">
@@ -435,23 +451,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
     </comp>
-    <comp lib="0" loc="(90,200)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="tristate" val="false"/>
-    </comp>
     <comp lib="1" loc="(360,280)" name="AND Gate">
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(500,130)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="1" loc="(360,350)" name="AND Gate">
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="1" loc="(360,140)" name="AND Gate">
       <a name="inputs" val="2"/>
     </comp>
   </circuit>
@@ -485,6 +485,17 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(200,130)" to="(250,130)"/>
     <wire from="(460,250)" to="(460,260)"/>
     <wire from="(460,250)" to="(500,250)"/>
+    <comp lib="0" loc="(200,130)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(180,260)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(440,260)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp loc="(660,180)" name="CPU_ENABLER"/>
     <comp lib="0" loc="(700,180)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -492,17 +503,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="labelloc" val="east"/>
     </comp>
     <comp loc="(370,180)" name="CPU_BYTE"/>
-    <comp lib="0" loc="(200,130)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="0" loc="(440,260)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp loc="(660,180)" name="CPU_ENABLER"/>
-    <comp lib="0" loc="(180,260)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
   </circuit>
   <circuit name="3x8 DECODER">
     <a name="circuit" val="3x8 DECODER"/>
@@ -605,19 +605,36 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(640,330)" to="(650,330)"/>
     <wire from="(230,260)" to="(230,320)"/>
     <wire from="(230,500)" to="(230,560)"/>
-    <comp lib="0" loc="(110,40)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="3"/>
-      <a name="incoming" val="3"/>
+    <comp lib="1" loc="(530,560)" name="AND Gate">
+      <a name="inputs" val="3"/>
+      <a name="label" val="111"/>
+    </comp>
+    <comp lib="1" loc="(530,440)" name="AND Gate">
+      <a name="inputs" val="3"/>
+      <a name="label" val="101"/>
+    </comp>
+    <comp lib="1" loc="(190,100)" name="NOT Gate"/>
+    <comp lib="1" loc="(530,260)" name="AND Gate">
+      <a name="inputs" val="3"/>
+      <a name="label" val="010"/>
+    </comp>
+    <comp lib="1" loc="(350,100)" name="NOT Gate"/>
+    <comp lib="1" loc="(530,200)" name="AND Gate">
+      <a name="inputs" val="3"/>
+      <a name="label" val="001"/>
     </comp>
     <comp lib="0" loc="(70,40)" name="Pin">
       <a name="width" val="3"/>
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="1" loc="(350,100)" name="NOT Gate"/>
-    <comp lib="1" loc="(530,560)" name="AND Gate">
+    <comp lib="1" loc="(530,500)" name="AND Gate">
       <a name="inputs" val="3"/>
-      <a name="label" val="111"/>
+      <a name="label" val="110"/>
+    </comp>
+    <comp lib="0" loc="(110,40)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
     </comp>
     <comp lib="0" loc="(720,310)" name="Pin">
       <a name="facing" val="west"/>
@@ -625,9 +642,15 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="8"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(530,500)" name="AND Gate">
+    <comp lib="1" loc="(530,320)" name="AND Gate">
       <a name="inputs" val="3"/>
-      <a name="label" val="110"/>
+      <a name="label" val="011"/>
+    </comp>
+    <comp lib="1" loc="(270,100)" name="NOT Gate"/>
+    <comp lib="0" loc="(670,310)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
     </comp>
     <comp lib="1" loc="(530,380)" name="AND Gate">
       <a name="inputs" val="3"/>
@@ -636,29 +659,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="1" loc="(530,140)" name="AND Gate">
       <a name="inputs" val="3"/>
       <a name="label" val="000"/>
-    </comp>
-    <comp lib="1" loc="(270,100)" name="NOT Gate"/>
-    <comp lib="1" loc="(190,100)" name="NOT Gate"/>
-    <comp lib="1" loc="(530,320)" name="AND Gate">
-      <a name="inputs" val="3"/>
-      <a name="label" val="011"/>
-    </comp>
-    <comp lib="0" loc="(670,310)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
-    <comp lib="1" loc="(530,440)" name="AND Gate">
-      <a name="inputs" val="3"/>
-      <a name="label" val="101"/>
-    </comp>
-    <comp lib="1" loc="(530,200)" name="AND Gate">
-      <a name="inputs" val="3"/>
-      <a name="label" val="001"/>
-    </comp>
-    <comp lib="1" loc="(530,260)" name="AND Gate">
-      <a name="inputs" val="3"/>
-      <a name="label" val="010"/>
     </comp>
   </circuit>
   <circuit name="4x16 DECODER">
@@ -874,80 +874,51 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(420,450)" to="(420,510)"/>
     <wire from="(420,930)" to="(420,990)"/>
     <wire from="(320,60)" to="(390,60)"/>
-    <comp lib="1" loc="(800,1040)" name="AND Gate">
-      <a name="inputs" val="4"/>
-      <a name="label" val="1111"/>
-    </comp>
-    <comp lib="1" loc="(800,800)" name="AND Gate">
-      <a name="inputs" val="4"/>
-      <a name="label" val="1011"/>
-    </comp>
-    <comp lib="1" loc="(460,100)" name="NOT Gate"/>
-    <comp lib="1" loc="(800,620)" name="AND Gate">
-      <a name="inputs" val="4"/>
-      <a name="label" val="1000"/>
-    </comp>
-    <comp lib="1" loc="(800,980)" name="AND Gate">
-      <a name="inputs" val="4"/>
-      <a name="label" val="1110"/>
-    </comp>
-    <comp lib="1" loc="(800,380)" name="AND Gate">
-      <a name="inputs" val="4"/>
-      <a name="label" val="0100"/>
-    </comp>
-    <comp lib="0" loc="(380,40)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
-    </comp>
-    <comp lib="0" loc="(340,40)" name="Pin">
-      <a name="width" val="4"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="1" loc="(800,440)" name="AND Gate">
-      <a name="inputs" val="4"/>
-      <a name="label" val="0101"/>
-    </comp>
-    <comp lib="1" loc="(800,200)" name="AND Gate">
-      <a name="inputs" val="4"/>
-      <a name="label" val="0001"/>
-    </comp>
-    <comp lib="1" loc="(620,100)" name="NOT Gate"/>
-    <comp lib="1" loc="(800,320)" name="AND Gate">
-      <a name="inputs" val="4"/>
-      <a name="label" val="0011"/>
-    </comp>
-    <comp lib="1" loc="(800,560)" name="AND Gate">
-      <a name="inputs" val="4"/>
-      <a name="label" val="0111"/>
-    </comp>
     <comp lib="0" loc="(1090,310)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="16"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(370,100)" name="NOT Gate"/>
-    <comp lib="1" loc="(800,260)" name="AND Gate">
-      <a name="inputs" val="4"/>
-      <a name="label" val="0010"/>
-    </comp>
-    <comp lib="1" loc="(540,100)" name="NOT Gate"/>
     <comp lib="1" loc="(800,140)" name="AND Gate">
       <a name="inputs" val="4"/>
       <a name="label" val="0000"/>
     </comp>
-    <comp lib="1" loc="(800,860)" name="AND Gate">
+    <comp lib="1" loc="(620,100)" name="NOT Gate"/>
+    <comp lib="1" loc="(370,100)" name="NOT Gate"/>
+    <comp lib="1" loc="(540,100)" name="NOT Gate"/>
+    <comp lib="1" loc="(800,920)" name="AND Gate">
       <a name="inputs" val="4"/>
-      <a name="label" val="1100"/>
+      <a name="label" val="1101"/>
+    </comp>
+    <comp lib="0" loc="(380,40)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="1" loc="(800,200)" name="AND Gate">
+      <a name="inputs" val="4"/>
+      <a name="label" val="0001"/>
+    </comp>
+    <comp lib="1" loc="(800,260)" name="AND Gate">
+      <a name="inputs" val="4"/>
+      <a name="label" val="0010"/>
     </comp>
     <comp lib="1" loc="(800,680)" name="AND Gate">
       <a name="inputs" val="4"/>
       <a name="label" val="1001"/>
     </comp>
-    <comp lib="1" loc="(800,920)" name="AND Gate">
+    <comp lib="0" loc="(340,40)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="1" loc="(800,320)" name="AND Gate">
       <a name="inputs" val="4"/>
-      <a name="label" val="1101"/>
+      <a name="label" val="0011"/>
+    </comp>
+    <comp lib="1" loc="(800,380)" name="AND Gate">
+      <a name="inputs" val="4"/>
+      <a name="label" val="0100"/>
     </comp>
     <comp lib="0" loc="(1060,320)" name="Splitter">
       <a name="facing" val="west"/>
@@ -958,9 +929,38 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="inputs" val="4"/>
       <a name="label" val="1010"/>
     </comp>
+    <comp lib="1" loc="(460,100)" name="NOT Gate"/>
+    <comp lib="1" loc="(800,1040)" name="AND Gate">
+      <a name="inputs" val="4"/>
+      <a name="label" val="1111"/>
+    </comp>
+    <comp lib="1" loc="(800,980)" name="AND Gate">
+      <a name="inputs" val="4"/>
+      <a name="label" val="1110"/>
+    </comp>
+    <comp lib="1" loc="(800,800)" name="AND Gate">
+      <a name="inputs" val="4"/>
+      <a name="label" val="1011"/>
+    </comp>
+    <comp lib="1" loc="(800,860)" name="AND Gate">
+      <a name="inputs" val="4"/>
+      <a name="label" val="1100"/>
+    </comp>
     <comp lib="1" loc="(800,500)" name="AND Gate">
       <a name="inputs" val="4"/>
       <a name="label" val="0110"/>
+    </comp>
+    <comp lib="1" loc="(800,440)" name="AND Gate">
+      <a name="inputs" val="4"/>
+      <a name="label" val="0101"/>
+    </comp>
+    <comp lib="1" loc="(800,560)" name="AND Gate">
+      <a name="inputs" val="4"/>
+      <a name="label" val="0111"/>
+    </comp>
+    <comp lib="1" loc="(800,620)" name="AND Gate">
+      <a name="inputs" val="4"/>
+      <a name="label" val="1000"/>
     </comp>
   </circuit>
   <circuit name="RAM">
@@ -982,12 +982,14 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(1240,490)" to="(1340,490)"/>
     <wire from="(800,200)" to="(800,230)"/>
     <wire from="(550,220)" to="(780,220)"/>
+    <wire from="(950,360)" to="(1050,360)"/>
     <wire from="(550,210)" to="(790,210)"/>
     <wire from="(790,210)" to="(790,230)"/>
     <wire from="(290,320)" to="(330,320)"/>
     <wire from="(890,90)" to="(1130,90)"/>
     <wire from="(890,490)" to="(1000,490)"/>
     <wire from="(1090,570)" to="(1090,620)"/>
+    <wire from="(1050,360)" to="(1050,410)"/>
     <wire from="(1160,570)" to="(1160,620)"/>
     <wire from="(810,190)" to="(810,230)"/>
     <wire from="(500,270)" to="(530,270)"/>
@@ -1008,21 +1010,39 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(550,240)" to="(630,240)"/>
     <wire from="(660,490)" to="(670,490)"/>
     <wire from="(630,630)" to="(640,630)"/>
-    <comp lib="0" loc="(290,360)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
+    <comp loc="(1240,490)" name="RAM_GRID"/>
     <comp lib="0" loc="(660,610)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(530,270)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp loc="(1130,330)" name="4x16 DECODER">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp loc="(500,270)" name="CPU_REGSITER"/>
+    <comp loc="(890,490)" name="4x16 DECODER"/>
+    <comp lib="0" loc="(950,360)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(1090,620)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
     </comp>
     <comp lib="0" loc="(820,250)" name="Splitter">
       <a name="facing" val="north"/>
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
     </comp>
-    <comp lib="0" loc="(1090,620)" name="Pin">
-      <a name="facing" val="north"/>
+    <comp lib="0" loc="(210,220)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(290,360)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
     <comp lib="0" loc="(1340,490)" name="Pin">
@@ -1031,25 +1051,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="8"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(1160,620)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="0" loc="(530,270)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
-    <comp loc="(1240,490)" name="RAM_GRID"/>
-    <comp loc="(500,270)" name="CPU_REGSITER"/>
-    <comp loc="(1130,330)" name="4x16 DECODER">
-      <a name="facing" val="south"/>
-    </comp>
     <comp lib="0" loc="(290,320)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
-    <comp loc="(890,490)" name="4x16 DECODER"/>
-    <comp lib="0" loc="(210,220)" name="Pin">
-      <a name="width" val="8"/>
+    <comp lib="0" loc="(1160,620)" name="Pin">
+      <a name="facing" val="north"/>
       <a name="tristate" val="false"/>
     </comp>
   </circuit>
@@ -1101,11 +1107,22 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(270,220)" to="(350,220)"/>
     <wire from="(270,260)" to="(350,260)"/>
     <wire from="(470,240)" to="(470,300)"/>
-    <comp lib="6" loc="(242,226)" name="Text">
-      <a name="text" val="H"/>
+    <comp lib="6" loc="(240,305)" name="Text">
+      <a name="text" val="s"/>
     </comp>
-    <comp lib="6" loc="(241,266)" name="Text">
-      <a name="text" val="V"/>
+    <comp lib="1" loc="(400,240)" name="AND Gate">
+      <a name="inputs" val="2"/>
+      <a name="label" val="x"/>
+    </comp>
+    <comp lib="1" loc="(570,260)" name="AND Gate">
+      <a name="inputs" val="2"/>
+      <a name="label" val="SET"/>
+    </comp>
+    <comp lib="0" loc="(270,220)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="6" loc="(240,344)" name="Text">
+      <a name="text" val="e"/>
     </comp>
     <comp lib="0" loc="(890,220)" name="Pin">
       <a name="facing" val="west"/>
@@ -1113,43 +1130,32 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="8"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(570,260)" name="AND Gate">
+    <comp lib="0" loc="(270,260)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="1" loc="(840,220)" name="Controlled Buffer">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="6" loc="(241,266)" name="Text">
+      <a name="text" val="V"/>
+    </comp>
+    <comp lib="1" loc="(570,320)" name="AND Gate">
       <a name="inputs" val="2"/>
-      <a name="label" val="SET"/>
+      <a name="label" val="ENABLE"/>
+    </comp>
+    <comp lib="6" loc="(242,226)" name="Text">
+      <a name="text" val="H"/>
     </comp>
     <comp lib="0" loc="(270,150)" name="Pin">
       <a name="width" val="8"/>
       <a name="tristate" val="false"/>
     </comp>
     <comp loc="(770,220)" name="CPU_REGSITER"/>
-    <comp lib="1" loc="(840,220)" name="Controlled Buffer">
-      <a name="width" val="8"/>
-    </comp>
     <comp lib="0" loc="(270,340)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="6" loc="(240,305)" name="Text">
-      <a name="text" val="s"/>
-    </comp>
-    <comp lib="0" loc="(270,260)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="6" loc="(240,344)" name="Text">
-      <a name="text" val="e"/>
-    </comp>
-    <comp lib="0" loc="(270,220)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="1" loc="(570,320)" name="AND Gate">
-      <a name="inputs" val="2"/>
-      <a name="label" val="ENABLE"/>
-    </comp>
     <comp lib="0" loc="(270,300)" name="Pin">
       <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="1" loc="(400,240)" name="AND Gate">
-      <a name="inputs" val="2"/>
-      <a name="label" val="x"/>
     </comp>
   </circuit>
   <circuit name="RAM_GRID">
@@ -1164,9 +1170,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="430" y="223">e</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="390" y="85">v</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="282" y="154">h</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="320" y="88">MAR</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="498" y="153">o</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="394" y="151">256B RAM</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="319" y="85">i</text>
       <circ-port height="8" pin="150,1290" width="8" x="266" y="146"/>
       <circ-port height="8" pin="690,2100" width="8" x="356" y="226"/>
       <circ-port height="8" pin="690,2150" width="8" x="426" y="226"/>
@@ -4894,302 +4900,302 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(760,2030)" to="(770,2030)"/>
     <wire from="(850,520)" to="(860,520)"/>
     <wire from="(2040,730)" to="(2070,730)"/>
-    <comp loc="(2290,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,620)" name="RAM_MEM_CELL"/>
     <comp loc="(2420,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,1730)" name="RAM_MEM_CELL"/>
-    <comp lib="0" loc="(1790,220)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="16"/>
+    <comp loc="(2810,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,720)" name="RAM_MEM_CELL"/>
+    <comp lib="0" loc="(690,2100)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
-    <comp loc="(1380,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,820)" name="RAM_MEM_CELL"/>
     <comp loc="(1640,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,1120)" name="RAM_MEM_CELL"/>
-    <comp lib="6" loc="(660,2155)" name="Text">
-      <a name="text" val="e"/>
-    </comp>
-    <comp loc="(1510,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,1220)" name="RAM_MEM_CELL"/>
     <comp loc="(1120,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,1930)" name="RAM_MEM_CELL"/>
     <comp loc="(2680,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,520)" name="RAM_MEM_CELL"/>
+    <comp lib="6" loc="(659,2101)" name="Text">
+      <a name="text" val="s"/>
+    </comp>
+    <comp loc="(1120,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,1430)" name="RAM_MEM_CELL"/>
     <comp lib="0" loc="(1680,250)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="fanout" val="16"/>
       <a name="incoming" val="16"/>
     </comp>
-    <comp loc="(2550,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,1730)" name="RAM_MEM_CELL"/>
     <comp loc="(1120,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,520)" name="RAM_MEM_CELL"/>
-    <comp lib="0" loc="(690,2150)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp loc="(2290,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,1930)" name="RAM_MEM_CELL"/>
-    <comp lib="0" loc="(330,1370)" name="Splitter">
-      <a name="fanout" val="16"/>
-      <a name="incoming" val="16"/>
-    </comp>
-    <comp loc="(1120,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,1020)" name="RAM_MEM_CELL"/>
     <comp loc="(1380,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,1430)" name="RAM_MEM_CELL"/>
     <comp loc="(1770,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,1330)" name="RAM_MEM_CELL"/>
-    <comp lib="6" loc="(659,2101)" name="Text">
-      <a name="text" val="s"/>
-    </comp>
-    <comp loc="(2030,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,1330)" name="RAM_MEM_CELL"/>
     <comp loc="(1380,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(1770,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,1430)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(2810,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,1220)" name="RAM_MEM_CELL"/>
-    <comp lib="0" loc="(690,2100)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp loc="(990,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,920)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(2420,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,1330)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,620)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,1530)" name="RAM_MEM_CELL"/>
     <comp lib="0" loc="(3270,1280)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp loc="(2420,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,1220)" name="RAM_MEM_CELL"/>
     <comp loc="(1640,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,920)" name="RAM_MEM_CELL"/>
+    <comp lib="0" loc="(330,1370)" name="Splitter">
+      <a name="fanout" val="16"/>
+      <a name="incoming" val="16"/>
+    </comp>
+    <comp loc="(2160,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,1430)" name="RAM_MEM_CELL"/>
+    <comp lib="6" loc="(660,2155)" name="Text">
+      <a name="text" val="e"/>
+    </comp>
+    <comp lib="0" loc="(690,2150)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
     <comp lib="0" loc="(1790,2250)" name="Pin">
       <a name="facing" val="north"/>
       <a name="width" val="8"/>
       <a name="tristate" val="false"/>
     </comp>
-    <comp loc="(1510,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(860,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,1220)" name="RAM_MEM_CELL"/>
-    <comp loc="(1900,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(1640,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,1630)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(990,2030)" name="RAM_MEM_CELL"/>
-    <comp loc="(2030,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,620)" name="RAM_MEM_CELL"/>
     <comp loc="(2290,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(1120,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,620)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,1220)" name="RAM_MEM_CELL"/>
     <comp loc="(1380,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(1640,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,2030)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,1120)" name="RAM_MEM_CELL"/>
     <comp lib="0" loc="(150,1290)" name="Pin">
       <a name="width" val="16"/>
       <a name="tristate" val="false"/>
     </comp>
-    <comp loc="(2420,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(2290,720)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,1930)" name="RAM_MEM_CELL"/>
-    <comp loc="(1120,1120)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(2160,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(1250,1730)" name="RAM_MEM_CELL"/>
-    <comp loc="(2550,820)" name="RAM_MEM_CELL"/>
-    <comp loc="(2680,1830)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,1020)" name="RAM_MEM_CELL"/>
-    <comp loc="(1380,520)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,1530)" name="RAM_MEM_CELL"/>
-    <comp loc="(1510,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,1430)" name="RAM_MEM_CELL"/>
+    <comp loc="(2160,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(2030,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,1930)" name="RAM_MEM_CELL"/>
     <comp loc="(2290,2030)" name="RAM_MEM_CELL"/>
+    <comp lib="0" loc="(1790,220)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp loc="(1900,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,1120)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(860,920)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(1380,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,1530)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,1930)" name="RAM_MEM_CELL"/>
+    <comp loc="(2680,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,820)" name="RAM_MEM_CELL"/>
+    <comp loc="(2290,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(1900,1630)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,1730)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,1330)" name="RAM_MEM_CELL"/>
+    <comp loc="(1250,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(1510,520)" name="RAM_MEM_CELL"/>
+    <comp loc="(990,1220)" name="RAM_MEM_CELL"/>
+    <comp loc="(2420,1020)" name="RAM_MEM_CELL"/>
+    <comp loc="(1770,720)" name="RAM_MEM_CELL"/>
+    <comp loc="(2550,1830)" name="RAM_MEM_CELL"/>
+    <comp loc="(2810,2030)" name="RAM_MEM_CELL"/>
   </circuit>
 </project>
